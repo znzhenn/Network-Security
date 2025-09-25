@@ -4,6 +4,6 @@ This repository showcases my cybersecurity home lab projects, which are a collec
 
 
 # Table of Contents
-1.  Cybersecurity Tools
-2.  Chapter name here
-3.  Chapter name here
+1. Cybersecurity Tools
+2. Chapter name here
+3. Chapter name here
