@@ -8,4 +8,8 @@ This repository showcases my learning for Network Security, being a connection o
 
 ### 2. [Configuring a Firewall](<2. Configuring a Firewall/Configuring a Firewall.md>)
 
-### 3. Chapter name here
+### 3. [Configuring Snort for Ubuntu Server](<3. Configuring Snort/Configuring Snort for Ubuntu Server.md>)
+
+### 4.
+
+### 5. 
