@@ -1,6 +1,6 @@
-# Exploring Ubuntu Home Lab 
+# **Exploring Ubuntu Home Lab **
 
-### 1. Identify Network Interfaces and IP Addresses
+### 1. **Identify Network Interfaces and IP Addresses**
 
     Command: ip a or ifconfig
 
@@ -16,7 +16,7 @@
 
 ---
 
-### 2. Check Open Ports
+### 2. **Check Open Ports**
 
     Command: sudo netstat -tuln or ss -tuln
         
@@ -37,7 +37,7 @@
     
 ---
 
-### 3. Analyze Network Connections
+### 3. **Analyze Network Connections**
 
 Command: **sudo lsof -i -P -n**
 
@@ -51,7 +51,7 @@ Command: **sudo lsof -i -P -n**
 
 ---
 
-### 4. Perform Network Scanning with Nmap
+### 4. **Perform Network Scanning with Nmap**
 
 Command: **sudo nmap -sS -O localhost**
 
@@ -63,7 +63,7 @@ Command: **sudo nmap -sS -O localhost**
 
 ---
 
-### 5. Check for Open Ports on the Server's Network
+### 5. **Check for Open Ports on the Server's Network**
 
 Command: **sudo nmap -sP 192.168.1.0/24**
 
@@ -77,7 +77,7 @@ Command: **sudo nmap -sP 192.168.1.0/24**
 
 ---
 
-### 6. Check for Services and Versions
+### 6. **Check for Services and Versions**
 
 Command: **sudo nmap -sV localhost**
 
@@ -90,7 +90,7 @@ Command: **sudo nmap -sV localhost**
 
 ---
 
-### 7. Identify Potential Vulnerabilities
+### 7. **Identify Potential Vulnerabilities**
 
 Command: **sudo nmap --script vuln localhost**
 
@@ -103,7 +103,7 @@ Command: **sudo nmap --script vuln localhost**
 
 ---
 
-### 8. Inspect Network Traffic
+### 8. **Inspect Network Traffic**
 
 Command: **sudo tcpdump -i eth0**
 
@@ -116,7 +116,7 @@ Command: **sudo tcpdump -i eth0**
 
 ---
 
-### 9. Monitor Network Connections in Real-Time
+### 9. **Monitor Network Connections in Real-Time**
 
 Command: **sudo watch -n 1 netstat -tulnp**
 
@@ -130,7 +130,7 @@ Command: **sudo watch -n 1 netstat -tulnp**
 
 ---
 
-### 10. Check Firewall Rules
+### 10. **Check Firewall Rules**
 
 Command: **sudo ufw status verbose**
 

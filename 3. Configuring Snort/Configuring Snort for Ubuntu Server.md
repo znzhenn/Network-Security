@@ -1,6 +1,6 @@
-# Configuring Snort for Server
+# **Configuring Snort for Server**
 
-### I. Update the System
+### I. **Update the System**
 #### 1. Ensure the system is up to date
 
     Command: sudo apt update
@@ -8,7 +8,7 @@
 
 
 ---
-### II. Install Snort
+### II. **Install Snort**
 #### 1. Install Snort directly using apt:
     Command: sudo apt install snort -y
 
@@ -17,7 +17,7 @@
     Command: ip a
 
 ---
-### III. Configure Snort
+### III. **Configure Snort**
 #### 1. Customize the snort configuration file
 
     Command: sudo nano /etc/snort/snort.conf 
@@ -30,7 +30,7 @@
 
 
 ---
-### IV. Update and Manage Snort Rules
+### IV. **Update and Manage Snort Rules**
 #### 1. Download the community rules if necessary
 
     Command: sudo wget https://www.snort.org/downloads/community/community-rules.tar.gz
@@ -50,18 +50,18 @@
     Command: alert icmp any any -> any any (msg:"ICMP detected"; sid:1000001; rev:1;)
 
 ---
-### V. Test Snort Configuration
+### V. **Test Snort Configuration**
 #### 1. Running a configuration test
 
 ---
-### VI. Running Snort in IDS Mode
+### VI. **Running Snort in IDS Mode**
 #### 1. Run snort in IDS mode to monitor traffic
     Command: sudo snort -c /etc/snort/snort.conf -i ens160
 
 ![running snort in ids mode](<running snort in ids mode.png>)
 
 ---
-### VII. Viewing Snort Logs
+### VII. **Viewing Snort Logs**
 #### 1. What files are fond in /var/log/snort?
 ![viewing snort logs](<viewing snort logs.png>)
 
@@ -73,7 +73,7 @@
 
 
 ---
-### VIII. Running Snort as a Daemon
+### VIII. **Running Snort as a Daemon**
 #### 1. Specify the interface to the monitor
     Command: sudo snort -D -c /etc/snort/snort.conf -i eth0
 

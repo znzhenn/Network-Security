@@ -1,4 +1,4 @@
-# Building a Lightweight SIEM and IDPS
+# **Building a Lightweight SIEM and IDPS**
 
 ### I. Key Concepts & Tools
 #### 1. Suricata -- IDPS
@@ -22,8 +22,9 @@ Used to run searches, extract JSON fields, and perform quick analyses. There is 
  Docker is used to run Loki and Promtail without installing them directly on Ubuntu.
 
 ---
-### II. Section Header
-#### 1. Focus
+### II. Setup and Tasks
+#### 1. Prepare the System
+
 
 #### 2. Focus
 

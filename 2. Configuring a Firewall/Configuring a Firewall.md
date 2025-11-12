@@ -1,6 +1,6 @@
-# Configuring a Firewall
+# **Configuring a Firewall**
 
-### I. Enabling Uncomplicated Firewalls (UFW)
+### I. **Enabling Uncomplicated Firewalls (UFW)**
 
 #### 1. Checking the status of a Uncomplicated Firewall (UFW)
 
@@ -53,7 +53,7 @@
 
 ![check ufw status (10)](<check ufw status (10).png>)
 
-### II. Enable UFW Logging
+### II. **Enable UFW Logging**
 
 #### 1. Check UFW logging is enabled
 
