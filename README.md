@@ -10,6 +10,6 @@ This repository showcases my learning for Network Security, being a connection o
 
 ### 3. [Configuring Snort for Ubuntu Server](<3. Configuring Snort/Configuring Snort for Ubuntu Server.md>)
 
-### 4.
+### 4. [Building a Lightweight SIEM & IDPS](<4. Building a SIEM and IDPS/Building a lightweight SIEM and IDPS.md>)
 
 ### 5. 
