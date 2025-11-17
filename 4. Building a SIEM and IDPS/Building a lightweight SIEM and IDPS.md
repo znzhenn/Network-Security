@@ -41,11 +41,13 @@ Used to run searches, extract JSON fields, and perform quick analyses. There is 
     sudo apt update && sudo apt upgrade -y
     sudo apt -y install curl jq unzip
 
-
+![install curl, jq, unzip](<install curl, jq, unzip.png>)
 
 
 #### 2. Installing docker
     Command: curl -fsSL https://get.docker.com | sudo sh
+
+![installing docker](<installing docker.png>)
 
 #### 3. Adding myself to the docker group 
     Command: sudo usermod -aG docker "$USER"
@@ -53,7 +55,7 @@ allows us to run docker without sudio
     Command: newgrp docker
 starts a fresh shell with the new group, docker
 
-
+![add to docker group](<add to docker group.png>)
 
 
 #### 4. Enable anad start the docker service
@@ -61,6 +63,7 @@ starts a fresh shell with the new group, docker
     sudo systemctl enable --now docker
     docker --version
 
+![enable and start docker service](<enable and start docker service.png>)
 
 ---
 ### **III. Suricata** [Suricata vs Snort: detailed guide to the programs](https://medium.com/@redfanatic7/suricata-vs-snort-detailed-guide-to-the-programs-c331cff452a1)
@@ -77,12 +80,11 @@ A high performance Network IDS, IPS and Network Security Monitoring engine
     sudo apt -y install suricata-update
     sudo suricata-update
 
-
-
 Find the interface name
 
     Command: ip -br a | awk '$1!="lo"{print $1, $3}'
 
+![interface name](<interface name.png>)
 
 
 Create a directory and file for our custom rules:
@@ -91,18 +93,19 @@ Create a directory and file for our custom rules:
     sudo mkdir -p /etc/suricata/rules
     sudo touch /etc/suricata/rules/local.rules
 
+![custom rule directory](<custom rule directory.png>)
 
 
-Update the suricata.yaml file to the correct rule path anad  open the file
+Update the suricata.yaml file to the correct rule path and  open the file
 
     Command: sudo nano /etc/suricata/suricata.yaml
-
-Search for the default-rule-path using control + w in nano. Update the rule path to /var/lib/suricata/rules and add /etc/suricata/rules/local.rules to rule-files:
 
 Enter the following command to test and validate your Suricata connection:
 
     Command: sudo suricata -T -c /etc/suricata/suricata.yaml -v
     man suricata
+
+![validate suricata](<validate suricata.png>)
 
 `-T:` Tells Suricata to test the configuration file  (suricata.yaml) for errors without actually starting the IDS/IPS engine
 
@@ -116,9 +119,13 @@ Stop the default service to control it manually
 
     Command: sudo systemctl stop suricata
 
+![stop suricata](<stop suricata.png>)
+
 Starts Suricata in the background 
 
     Command: sudo suricata -i $(ip -br a | awk '$1!="lo"{print $1; exit}') -D
+
+![starts suricata in the background](<starts suricata in the background.png>)
 
 Confirm it writes logs  "control + c" to exit
 
@@ -149,6 +156,8 @@ Loki acts as the central log database in the SIEM setup. It recieves logs, store
 
     Command: sudo mkdir -p /etc/loki /var/lib/loki/{chunks,rules}
 
+![create loki directories](<create loki directories.png>)
+
 #### 2. Create a default Loki configuration file
 // add an image of the yaml file here
 
@@ -165,6 +174,7 @@ Loki acts as the central log database in the SIEM setup. It recieves logs, store
     sudo chown -R 10001:10001 /var/lib/loki
     sudo chmod -R u+rwX /var/lib/loki
 
+![allow loki to write files](<allow loki to write files.png>)
 
 #### 4. Start Loki in Docker
 
@@ -173,6 +183,8 @@ Loki acts as the central log database in the SIEM setup. It recieves logs, store
     -v /etc/loki:/etc/loki \
     -v /var/lib/loki:/var/lib/loki \
     grafana/loki:2.9.8 -config.file=/etc/loki/loki-config.yml
+
+![start loki in docker](<start loki in docker.png>)
 
 - -d: runs in detached (background) mode.
 - --name loki: names the container “loki” for easy reference.
