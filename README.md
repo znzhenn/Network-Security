@@ -4,7 +4,7 @@ This repository showcases my learning for Cybersecurity, being a connection of h
 - An additional folder labeled "Network Security" exists for the learning completed in that course 
 
 # Network Security Learning Table of Contents
-### 1. []()
+### 1. [Linux Security](<1. Linux Security/LinxSecurity.md>)
 
 ### 2. []()
 
