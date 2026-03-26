@@ -6,7 +6,7 @@ This repository showcases my learning for Cybersecurity, being a connection of h
 # Network Security Learning Table of Contents
 ### 1. [Linux Security](<1. Linux Security/LinxSecurity.md>)
 
-### 2. []()
+### 2. [Seed Security Lab](<2. Seed Security Lab/Seed Security Lab.md>)
 
 ### 3. []()
 
