@@ -216,21 +216,28 @@ Finally, compile the following program myprog, and in the same directory as the 
 
 #### Step 2. After you have done the above, please run myprog under the following conditions, and observe what happens.
 Make myprog a regular program, and run it as a normal user.
-
 ![case1](case1.png)
 
-Make myprog a Set-UID root program, and run it as a normal user.
+LD_PRELOAD **works** because the program runs with normal privileges.
 
+
+Make myprog a Set-UID root program, and run it as a normal user.
 ![case2](case2.png)
+
+LD_PRELOAD is supposed to be *blocked* to prevent privilege escalation.
+
 
 Make myprog a Set-UID root program, export the LD PRELOAD environment variable again in
 the root account and run it.
-
 ![case3](case3.png)
 
-Make myprog a Set-UID user1 program (i.e., the owner is user1, which is another user account), export the LD PRELOAD environment variable again in a different user’s account (not-root user) and run it.
+LD_PRELOAD *works* because root running its own program is safe.
 
+
+Make myprog a Set-UID user1 program (i.e., the owner is user1, which is another user account), export the LD PRELOAD environment variable again in a different user’s account (not-root user) and run it.
 ![case4](case4.png)
+
+LD_PRELOAD is supposed to be *blocked* to stop non-owner users from injecting code.
 
 #### Step 3. Please design an experiment to figure out the main causes, and explain why the behaviors in Step 2 are different. 
  (Hint: the child process may not inherit the LD * environment variables).
@@ -314,8 +321,9 @@ initial run:![initial run](<task9 initial run.png>)
 
 file created:![file created](<initial file created.png>)
 
-The exploit did not work initially because, although the program opens /etc/zzz with root privileges, it later drops its privileges using setuid(getuid()) before launching the shell.However, the opened file descriptor fd still retains root-level access.
+The exploit did not work because, although the program opens /etc/zzz with root privileges, it later drops its privileges using setuid(getuid()) before launching the shell.However, the opened file descriptor fd still retains root-level access.
 
-The failure occurs because the exploit did not make use of this inherited file descriptor inside the new shell. To successfully exploit the vulnerability, the attacker must directly write to /etc/zzz using the existing file descriptor (e.g., via /proc/self/fd/<fd>).
+It fails because the exploit did not make use of this inherited file descriptor inside the new shell. To successfully exploit the vulnerability, the attacker must directly write to /etc/zzz using the existing file descriptor (e.g., via /proc/self/fd/<fd>).
 
 This demonstrates a capability leaking vulnerability, where privileged access is preserved through open file descriptors even after privileges are dropped.
+(I also did some research and this happens sometimes with shared folders on VMs)
