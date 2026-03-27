@@ -216,15 +216,14 @@ Listing 3: catall.c
     }
 
 #### Step 1. Compile the above program, make it a root-owned Set-UID program. The program will use system() to invoke the command. If you were Bob, can you compromise the integrity of the system? For example, can you remove a file that is not writable to you?
-Answer:
+
 
 #### Step 2. Comment out the system(command) statement, and uncomment the execve() statement; the program will use execve() to invoke the command. Compile the program, and make it a root-owned Set-UID. Do your attacks in Step 1 still work? Please describe and explain your observations
-Answer: 
+
 
 ### Task 9: Capacity Leaking
 Compile the following program, change its owner to root, and make it a Set-UID program. Run the program as a normal user. Can you exploit the capability leaking vulnerability in this program? The goal is to write to the /etc/zzz file as a normal user.
 
-Answer:
 
 Listing 4: cap leak.c
 
@@ -249,7 +248,7 @@ Listing 4: cap leak.c
         // Permanently disable the privilege by making the
         // effective uid the same as the real uid
         setuid(getuid());
-        
+
         // Execute /bin/sh
         v[0] = "/bin/sh"; v[1] = 0;
         execve(v[0], v, 0);
